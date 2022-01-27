@@ -130,3 +130,6 @@ dmypy.json
 
 # MacOS
 .DS_Store
+
+# Data files are too large
+data/ZINCProperties/*.xls
