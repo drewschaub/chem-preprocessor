@@ -1,5 +1,6 @@
 import gzip
 import os
+import shutil
 import tarfile
 import urllib
 from pathlib import Path
@@ -35,11 +36,6 @@ def fetchData(dataFile, dataURL, dataPath, extract=False):
             tgzFile.close()
 
         if compressedFile.suffix == 'gz':
-            blockSize=65536
-
-            input = gzip.GzipFile(compressedFile, 'wb').read()
-            input.close()
-
-            output = open(decompressedFile, 'wb')
-            output.write(input)
-            output.close()
+            with gzip.open(compressedFile, 'rb') as inputFile:
+                with open(decompressedFile, 'wb') as outputFile:
+                    shutil.copyfileobj(inputFile, outputFile)
