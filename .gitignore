@@ -133,3 +133,6 @@ dmypy.json
 
 # Data files are too large
 data/*
+
+# Users may way their own figures
+figures/*
