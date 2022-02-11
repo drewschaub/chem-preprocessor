@@ -132,4 +132,4 @@ dmypy.json
 .DS_Store
 
 # Data files are too large
-data/ZINCProperties/*.xls
+data/*
